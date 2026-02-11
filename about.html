@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - ABC Precision</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GENERAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:#fff;background:#121212;line-height:1.6;}
+.container{width:90%;max-width:1200px;margin:auto;}
+
+:root{
+  --primary-red:#e10600;
+  --dark-red:#8b0000;
+  --dark-grey:#121212;
+  --light-grey:#2a2a2a;
+  --card-grey:#3a3a3a;
+  --gray-border:#333;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:12px;}
+::-webkit-scrollbar-track{background:#121212;}
+::-webkit-scrollbar-thumb{background:#888;border-radius:6px;border:3px solid #121212;}
+::-webkit-scrollbar-thumb:hover{background:#555;}
+
+/* ===== HEADER ===== */
+header{
+  background:#000;
+  padding:20px 0;
+  border-bottom:2px solid var(--primary-red);
+}
+header .logo{
+  font-size:1.8rem;
+  color:var(--primary-red);
+  font-weight:700;
+}
+.nav-menu{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.nav-menu li{margin-left:25px;}
+.nav-menu li a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 10px;
+  transition:all 0.3s ease;
+}
+.nav-menu li a:hover{color:var(--primary-red);}
+
+/* ===== HERO ===== */
+.hero{
+  background:var(--light-grey);
+  padding:120px 0;
+  text-align:center;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(255,0,0,0.1);
+  margin-bottom:30px;
+}
+.hero h1{
+  font-size:3.4rem;
+  color:var(--primary-red);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  background:var(--card-grey);
+  display:inline-block;
+  padding:18px 36px;
+  border-radius:30px;
+}
+.hero p{
+  font-size:1.3rem;
+  margin-top:15px;
+}
+
+/* ===== CONTENT ===== */
+.section{
+  background:var(--card-grey);
+  padding:50px 35px;
+  border-radius:12px;
+  margin-bottom:30px;
+}
+.section h2{
+  color:var(--primary-red);
+  font-size:2rem;
+  margin-bottom:15px;
+}
+.section p{
+  font-size:1.15rem;
+  line-height:1.7;
+  margin-bottom:15px;
+}
+
+/* ===== STATS ===== */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+.stat{
+  background:#2a2a2a;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+}
+.stat h3{
+  font-size:2.2rem;
+  color:var(--primary-red);
+}
+.stat span{
+  font-size:1rem;
+  font-weight:600;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  text-align:center;
+  padding:40px 0;
+  border-top:2px solid var(--gray-border);
+}
+.contact h3{color:var(--primary-red);}
+.contact a{
+  color:var(--primary-red);
+  font-weight:600;
+  text-decoration:none;
+}
+.contact a:hover{text-decoration:underline;}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:2px solid var(--gray-border);
+  padding:20px 0;
+  text-align:center;
+  font-size:0.9rem;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-up{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.8s ease-out;
+}
+.fade-up.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header class="fade-up">
+  <div class="container">
+    <strong class="logo">ABC Precision</strong>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cnc-milling.html">CNC Milling</a></li>
+        <li><a href="cam-programming.html">CAM Programming</a></li>
+        <li><a href="cad-design.html">CAD Design</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#quote">Request a Quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero fade-up">
+  <div class="container">
+    <h1>About Us</h1>
+    <p>Precision manufacturing driven by experience</p>
+  </div>
+</section>
+
+<section class="section fade-up">
+  <div class="container">
+    <h2>Who We Are</h2>
+    <p>
+      ABC Precision is a modern machining and design partner specializing in
+      CNC milling, CAM programming, and CAD design. We focus on accuracy,
+      efficiency, and dependable turnaround for every project.
+    </p>
+    <p>
+      From one-off prototypes to production runs, our workflow is built to
+      deliver consistent, high-quality results.
+    </p>
+  </div>
+</section>
+
+<section class="section fade-up">
+  <div class="container">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to provide precision machining and engineering services
+      that meet the highest standards of quality while maintaining fast
+      lead times and clear communication.
+    </p>
+  </div>
+</section>
+
+<section class="section fade-up">
+  <div class="container">
+    <h2>Why Choose ABC Precision</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>±0.001"</h3>
+        <span>Tight Tolerances</span>
+      </div>
+      <div class="stat">
+        <h3>Fast</h3>
+        <span>Turnaround</span>
+      </div>
+      <div class="stat">
+        <h3>End-to-End</h3>
+        <span>Design to Production</span>
+      </div>
+      <div class="stat">
+        <h3>Reliable</h3>
+        <span>Consistent Quality</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact fade-up">
+  <div class="container">
+    <h3>Contact Us</h3>
+    <p>Phone: <a href="tel:+18482461719">(848) 246-1719</a></p>
+    <p>Email: <a href="mailto:info@Abc-precision.com">info@Abc-precision.com</a></p>
+  </div>
+</section>
+
+<footer class="fade-up">
+  <p>© ABC Precision</p>
+</footer>
+
+<script>
+const faders=document.querySelectorAll('.fade-up');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+faders.forEach(f=>observer.observe(f));
+</script>
+
+</body>
+</html>

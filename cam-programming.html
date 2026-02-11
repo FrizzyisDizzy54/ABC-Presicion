@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAM Programming - ABC Precision</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== GENERAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:#fff;background:#121212;line-height:1.6;}
+.container{width:90%;max-width:1200px;margin:auto;}
+:root{
+  --primary-red:#e10600; --dark-red:#8b0000; --black:#000;
+  --dark-grey:#121212; --light-grey:#2a2a2a; --card-grey:#3a3a3a;
+  --gray-border:#333; --accent:#ff3b3b;
+}
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:12px;}
+::-webkit-scrollbar-track{background:#121212;border-radius:6px;}
+::-webkit-scrollbar-thumb{background-color:#888;border-radius:6px;border:3px solid #121212;}
+::-webkit-scrollbar-thumb:hover{background-color:#555;}
+*{scrollbar-width:thin;scrollbar-color:#888 #121212;}
+
+/* ===== HEADER ===== */
+header{background:#000;padding:20px 0;border-bottom:2px solid var(--primary-red);}
+header .logo{font-size:1.8rem;color:var(--primary-red);}
+.nav-menu{list-style:none;display:flex;align-items:center;flex-wrap:wrap;}
+.nav-menu li{margin-left:25px;}
+.nav-menu li a{color:#fff;text-decoration:none;font-weight:600;padding:8px 10px;transition:all 0.3s ease;}
+.nav-menu li a:hover{color:var(--primary-red);}
+
+/* ===== HERO ===== */
+.hero{background: var(--light-grey);padding:100px 0;text-align:center;border-radius:12px;box-shadow:0 10px 20px rgba(255,0,0,0.1);margin-bottom:30px;}
+.hero h1{font-size:3rem;color:var(--primary-red);letter-spacing:1px;margin-bottom:15px;text-transform:uppercase;display:inline-block;padding:15px 25px;background:var(--card-grey);border-radius:25px;}
+.hero p{font-size:1.3rem;color:#fff;margin-bottom:15px;font-weight:500;}
+.hero .btn{background: linear-gradient(135deg,var(--primary-red),var(--dark-red)); color:#fff;padding:14px 30px;font-size:1.1rem;border:none;border-radius:8px;transition: all 0.3s ease;font-weight:600;}
+.hero .btn:hover{transform: translateY(-3px) scale(1.05); box-shadow:0 8px 20px rgba(225,0,0,0.3);}
+
+/* ===== DESCRIPTION ===== */
+.description{background: var(--card-grey);padding:40px 30px;border-radius:12px;margin-bottom:30px;text-align:center;}
+.description p{color:#fff;font-size:1.2rem;line-height:1.7;}
+
+/* ===== IMAGE SECTION ===== */
+.image-section{background: var(--card-grey);padding:60px 0;text-align:center;border-radius:12px;margin-bottom:50px;}
+.image-section img{max-width:100%;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+
+/* ===== QUOTE FORM ===== */
+.quote{background: var(--dark-grey);padding:60px 0;text-align:center;border-radius:12px;box-shadow:0 8px 20px rgba(255,0,0,0.05);}
+.quote h2{font-size:2rem;color: var(--primary-red);margin-bottom:20px;font-weight:700;}
+.quote form{max-width:500px;margin:20px auto 0;display:flex;flex-direction:column;gap:15px;}
+.quote input, .quote textarea{width:100%;padding:14px;border:1px solid var(--gray-border);border-radius:8px;font-size:1rem;background:#222;color:#fff;}
+.quote textarea{resize:vertical;}
+.quote button{background: linear-gradient(135deg,var(--primary-red),var(--dark-red));color:#fff;padding:14px 0;font-size:1.1rem;border:none;border-radius:8px;cursor:pointer;transition: all 0.3s ease;font-weight:600;}
+.quote button:hover{transform: translateY(-3px) scale(1.05);box-shadow:0 8px 20px rgba(225,0,0,0.3);}
+
+/* ===== FILE UPLOAD ===== */
+.file-upload-wrapper{position: relative;border:2px dashed var(--gray-border);border-radius:8px;padding:25px;text-align:center;background:#222;cursor:pointer;transition:all 0.25s ease;font-weight:500;font-size:1rem;}
+.file-upload-wrapper:hover{border-color: var(--primary-red);background:#333;}
+.file-upload-wrapper input[type=file]{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;}
+.file-upload-text{font-size:1rem;color:#fff;}
+.file-upload-text span{font-weight:bold;color: var(--primary-red);}
+
+/* ===== ABOUT ===== */
+.about{background:#121212;padding:60px 0;text-align:center;}
+.about h2{font-size:2rem;margin-bottom:20px;color:var(--primary-red);font-weight:700;}
+.about p{max-width:800px;margin:0 auto;color:#fff;line-height:1.7;font-weight:500;}
+
+/* ===== CONTACT ===== */
+.contact{background:#121212;padding:40px 0;text-align:center;border-top:2px solid var(--gray-border);}
+.contact h3{font-size:1.5rem;margin-bottom:10px;color:var(--primary-red);font-weight:700;}
+.contact p{font-size:1rem;margin-bottom:6px;color:#fff;}
+.contact a{color:var(--primary-red);text-decoration:none;font-weight:600;}
+.contact a:hover{text-decoration:underline;}
+
+/* ===== FOOTER ===== */
+footer{border-top:2px solid var(--gray-border);padding:20px 0;text-align:center;font-size:0.9rem;color:#fff;font-weight:500;}
+
+/* ===== ANIMATIONS ===== */
+.fade-up{opacity:0;transform:translateY(20px);transition:all 0.8s ease-out;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="fade-up">
+  <div class="container header-container">
+    <strong class="logo">ABC Precision</strong>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cnc-milling.html">CNC Milling</a></li>
+        <li><a href="cam-programming.html">CAM Programming</a></li>
+        <li><a href="cad-design.html">CAD Design</a></li>
+<li><a href="index.html#quote">Request a Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero fade-up">
+  <div class="container">
+    <h1>CAM Programming</h1>
+    <p>Optimized toolpaths and CNC simulations for accuracy and efficiency</p>
+<a href="index.html#quote" class="btn">Request a Quote</a>
+  </div>
+</section>
+
+<section class="description fade-up">
+  <div class="container">
+    <p>We develop optimized CAM programs that are carefully tailored to each part and machining setup to maximize efficiency and precision. By fine-tuning toolpaths, feeds, speeds, and cutting strategies, we significantly reduce cycle times while minimizing tool wear and extending overall tool life. Our programming approach ensures consistent, accurate machining across all setups, even for complex geometries or multi-axis operations. The result is reliable part quality, reduced production costs, and smoother, more predictable manufacturing from the first piece to the last.
+</p>
+  </div>
+</section>
+
+<section class="image-section fade-up">
+  <div class="container">
+    <img src="cam-programming.png" alt="CAM Programming Image">
+  </div>
+</section>
+<section class="about fade-up">
+  <div class="container">
+    <h2>About ABC Precision CAM</h2>
+    <p>ABC Precision provides expert CAM programming services to ensure every CNC operation runs flawlessly. Our team optimizes toolpaths and machining strategies to save time, reduce costs, and deliver high-quality parts.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact fade-up">
+  <div class="container">
+    <h3>Contact Us</h3>
+    <p>Phone: <a href="tel:+18482461719">(848) 246-1719</a></p>
+    <p>Email: <a href="mailto:info@Abc-precision.com">info@Abc-precision.com</a></p>
+  </div>
+</section>
+
+<footer class="fade-up">
+  <p>© ABC Precision</p>
+</footer>
+
+<script>
+const faders=document.querySelectorAll('.fade-up');
+const appearOptions={threshold:0.2,rootMargin:"0px 0px -50px 0px"};
+const appearOnScroll=new IntersectionObserver(function(entries,appearOnScroll){
+entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('visible');appearOnScroll.unobserve(entry.target);});
+},appearOptions);
+faders.forEach(fader=>appearOnScroll.observe(fader));
+</script>
+</body>
+</html>

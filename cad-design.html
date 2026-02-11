@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAD Design - ABC Precision</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GENERAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:#fff;background:#121212;line-height:1.6;}
+.container{width:90%;max-width:1200px;margin:auto;}
+
+:root{
+  --primary-red:#e10600;
+  --dark-red:#8b0000;
+  --dark-grey:#121212;
+  --light-grey:#2a2a2a;
+  --card-grey:#3a3a3a;
+  --gray-border:#333;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:12px;}
+::-webkit-scrollbar-track{background:#121212;}
+::-webkit-scrollbar-thumb{background:#888;border-radius:6px;border:3px solid #121212;}
+::-webkit-scrollbar-thumb:hover{background:#555;}
+
+/* ===== HEADER (IDENTICAL TO CNC MILLING) ===== */
+header{
+  background:#000;
+  padding:20px 0;
+  border-bottom:2px solid var(--primary-red);
+}
+header .logo{
+  font-size:1.8rem;
+  color:var(--primary-red);
+  font-weight:700;
+}
+.nav-menu{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.nav-menu li{margin-left:25px;}
+.nav-menu li a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 10px;
+  transition:all 0.3s ease;
+}
+.nav-menu li a:hover{color:var(--primary-red);}
+
+/* ===== HERO ===== */
+.hero{
+  background:var(--light-grey);
+  padding:120px 0;
+  text-align:center;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(255,0,0,0.1);
+  margin-bottom:30px;
+}
+.hero h1{
+  font-size:3.6rem;
+  color:var(--primary-red);
+  letter-spacing:1px;
+  margin-bottom:15px;
+  text-transform:uppercase;
+  display:inline-block;
+  padding:18px 34px;
+  background:var(--card-grey);
+  border-radius:30px;
+}
+.hero p{
+  font-size:1.35rem;
+  font-weight:500;
+  margin-bottom:18px;
+}
+.hero .btn{
+  background:linear-gradient(135deg,var(--primary-red),var(--dark-red));
+  color:#fff;
+  padding:14px 30px;
+  font-size:1.1rem;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  transition:all 0.3s ease;
+  display:inline-block;
+}
+.hero .btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 8px 20px rgba(225,0,0,0.3);
+}
+
+/* ===== DESCRIPTION ===== */
+.description{
+  background:var(--card-grey);
+  padding:40px 30px;
+  border-radius:12px;
+  margin-bottom:30px;
+  text-align:center;
+}
+.description p{
+  font-size:1.2rem;
+  line-height:1.7;
+}
+
+/* ===== IMAGE SECTION (BIGGER + CENTERED) ===== */
+.image-section{
+  background:var(--card-grey);
+  padding:70px 0;
+  text-align:center;
+  border-radius:12px;
+  margin-bottom:50px;
+}
+.image-section img{
+  display:block;
+  margin:0 auto;
+  width:100%;
+  max-width:1000px;
+  height:auto;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* ===== ABOUT ===== */
+.about{
+  background:#121212;
+  padding:60px 0;
+  text-align:center;
+}
+.about h2{
+  font-size:2rem;
+  color:var(--primary-red);
+  margin-bottom:20px;
+}
+.about p{
+  max-width:800px;
+  margin:0 auto;
+  font-size:1.1rem;
+  line-height:1.7;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  background:#121212;
+  padding:40px 0;
+  text-align:center;
+  border-top:2px solid var(--gray-border);
+}
+.contact h3{
+  color:var(--primary-red);
+  margin-bottom:10px;
+}
+.contact p{margin-bottom:6px;}
+.contact a{
+  color:var(--primary-red);
+  text-decoration:none;
+  font-weight:600;
+}
+.contact a:hover{text-decoration:underline;}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:2px solid var(--gray-border);
+  padding:20px 0;
+  text-align:center;
+  font-size:0.9rem;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-up{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.8s ease-out;
+}
+.fade-up.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header class="fade-up">
+  <div class="container header-container">
+    <strong class="logo">ABC Precision</strong>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cnc-milling.html">CNC Milling</a></li>
+        <li><a href="cam-programming.html">CAM Programming</a></li>
+        <li><a href="cad-design.html">CAD Design</a></li>
+        <li><a href="index.html#quote">Request a Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero fade-up">
+  <div class="container">
+    <h1>CAD Design</h1>
+    <p>Production-ready 3D models and engineering drawings</p>
+    <a href="index.html#quote" class="btn">Request a Quote</a>
+  </div>
+</section>
+
+<section class="description fade-up">
+  <div class="container">
+    <p>
+      We create accurate CAD models specifically optimized for CNC machining, with a strong focus on precision, manufacturability, and performance. Every model is designed with proper tolerances, material behavior, and machining constraints in mind, ensuring parts can be produced efficiently without unnecessary complexity or rework. By prioritizing clean geometry and practical design choices, we help streamline the transition from design to production, reduce machining time, and deliver components that meet functional and quality requirements from the start.
+    </p>
+  </div>
+</section>
+
+<section class="image-section fade-up">
+  <div class="container">
+    <img src="cad-design.png" alt="CAD Design Example">
+  </div>
+</section>
+
+<section class="about fade-up">
+  <div class="container">
+    <h2>About ABC Precision CAD</h2>
+    <p>
+      We transform ideas into production-ready designs using industry-standard CAD
+      tools, ensuring seamless transition from concept to manufacturing.
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="contact fade-up">
+  <div class="container">
+    <h3>Contact Us</h3>
+    <p>Phone: <a href="tel:+18482461719">(848) 246-1719</a></p>
+    <p>Email: <a href="mailto:info@Abc-precision.com">info@Abc-precision.com</a></p>
+  </div>
+</section>
+
+<footer class="fade-up">
+  <p>© ABC Precision</p>
+</footer>
+
+<script>
+const faders=document.querySelectorAll('.fade-up');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+faders.forEach(f=>observer.observe(f));
+</script>
+
+</body>
+</html>

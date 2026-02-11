@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Precision</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GENERAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:#fff;background:#121212;line-height:1.6;}
+.container{width:90%;max-width:1200px;margin:auto;}
+:root{
+  --primary-red:#e10600;
+  --dark-red:#8b0000;
+  --black:#000;
+  --dark-grey:#121212;
+  --light-grey:#2a2a2a;
+  --gray-border:#333;
+  --accent:#ff3b3b;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:12px;}
+::-webkit-scrollbar-track{background:#121212;}
+::-webkit-scrollbar-thumb{background:#888;border-radius:6px;}
+::-webkit-scrollbar-thumb:hover{background:#555;}
+
+/* ===== HEADER ===== */
+header{
+  background:#000;
+  padding:20px 0;
+  border-bottom:2px solid var(--primary-red);
+}
+header .logo{font-size:1.8rem;color:var(--primary-red);}
+.nav-menu{list-style:none;display:flex;align-items:center;flex-wrap:wrap;}
+.nav-menu li{margin-left:25px;}
+.nav-menu li a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 10px;
+  transition:0.3s;
+}
+.nav-menu li a:hover{color:var(--primary-red);}
+
+/* ===== HERO ===== */
+.hero{
+  background:var(--light-grey);
+  padding:120px 0 80px;
+  text-align:center;
+  border-radius:12px;
+  box-shadow:0 10px 20px rgba(255,0,0,0.1);
+  margin-bottom:50px;
+}
+.hero h1{
+  font-size:3.2rem;
+  color:var(--primary-red);
+  margin-bottom:20px;
+  text-transform:uppercase;
+  background:#3a3a3a;
+  padding:15px 25px;
+  border-radius:25px;
+  display:inline-block;
+}
+.hero p{font-size:1.4rem;margin-bottom:20px;}
+.hero .btn{
+  background:linear-gradient(135deg,var(--primary-red),var(--dark-red));
+  color:#fff;
+  padding:16px 36px;
+  font-size:1.2rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+}
+.hero .btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 8px 20px rgba(225,0,0,0.3);
+}
+
+/* ===== ABOUT BUTTON (ADDED ONLY) ===== */
+.hero .about-btn{
+  margin-left:15px;
+  background:#2a2a2a;
+  color:var(--primary-red);
+  border:2px solid var(--gray-border);
+}
+.hero .about-btn:hover{
+  background:var(--primary-red);
+  color:#000;
+}
+
+/* ===== HERO LOGO ===== */
+.hero-logo-wrapper{
+  margin:40px auto 0;
+  max-width:720px;
+}
+.hero-logo{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:contain;
+  border-radius:16px;
+  filter:
+    drop-shadow(0 0 18px rgba(225,0,0,0.6))
+    drop-shadow(0 0 40px rgba(225,0,0,0.3));
+  transition:0.3s;
+}
+.hero-logo:hover{
+  transform:scale(1.03);
+  filter:
+    drop-shadow(0 0 28px rgba(225,0,0,0.85))
+    drop-shadow(0 0 60px rgba(225,0,0,0.45));
+}
+
+/* ===== SERVICES ===== */
+.services{padding:80px 0;}
+.service-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.service-card{
+  background:#3a3a3a;
+  border:2px solid var(--gray-border);
+  padding:40px 30px;
+  border-radius:12px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  transition:0.4s;
+}
+.service-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  border-color:var(--primary-red);
+  box-shadow:0 15px 35px rgba(225,0,0,0.25);
+}
+.service-card h3{color:var(--primary-red);margin-bottom:12px;}
+.service-card p{font-weight:500;}
+
+/* ===== QUOTE ===== */
+.quote{
+  background:var(--dark-grey);
+  padding:80px 0;
+  text-align:center;
+  border-radius:12px;
+}
+.quote h2{color:var(--primary-red);margin-bottom:25px;}
+.quote form{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+.quote input,.quote textarea{
+  padding:16px;
+  background:#222;
+  border:1px solid var(--gray-border);
+  border-radius:8px;
+  color:#fff;
+}
+.quote button{
+  background:linear-gradient(135deg,var(--primary-red),var(--dark-red));
+  padding:16px;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+  padding:60px 0;
+  text-align:center;
+  border-top:2px solid var(--gray-border);
+}
+.contact h3{color:var(--primary-red);}
+.contact a{color:var(--primary-red);text-decoration:none;}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:2px solid var(--gray-border);
+  padding:30px 0;
+  text-align:center;
+}
+
+/* ===== ANIMATION ===== */
+.fade-up{opacity:0;transform:translateY(20px);transition:0.8s;}
+.fade-up.visible{opacity:1;transform:none;}
+</style>
+</head>
+
+<body>
+
+<header class="fade-up">
+  <div class="container header-container">
+    <strong class="logo">ABC Precision</strong>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cnc-milling.html">CNC Milling</a></li>
+        <li><a href="cam-programming.html">CAM Programming</a></li>
+        <li><a href="cad-design.html">CAD Design</a></li>
+        <li><a href="#quote">Request a Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero fade-up">
+  <div class="container">
+    <h1>Precision CNC Manufacturing</h1>
+    <p>Professional CNC, CAM, and CAD solutions</p>
+
+    <!-- BUTTONS (ONLY ADDITION) -->
+    <a href="#quote" class="btn">Request a Quote</a>
+    <a href="about.html" class="btn about-btn">About Us</a>
+
+    <div class="hero-logo-wrapper fade-up">
+      <img src="logo.png" alt="ABC Precision Logo" class="hero-logo">
+    </div>
+  </div>
+</section>
+
+<section class="services container fade-up">
+  <div class="service-list">
+    <a href="cnc-milling.html" class="service-card">
+      <h3>CNC Milling</h3>
+      <p>High-precision milling for metal and plastic components.</p>
+    </a>
+    <a href="cam-programming.html" class="service-card">
+      <h3>CAM Programming</h3>
+      <p>Optimized toolpaths for accuracy and efficiency.</p>
+    </a>
+    <a href="cad-design.html" class="service-card">
+      <h3>CAD Design</h3>
+      <p>Production-ready 3D models and engineering drawings.</p>
+    </a>
+  </div>
+</section>
+
+<section id="quote" class="quote fade-up">
+  <div class="container">
+    <h2>Request a Quote</h2>
+
+    <form action="https://formspree.io/f/xlglaknr" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Describe your project" required></textarea>
+
+      <button type="submit">Submit Quote</button>
+    </form>
+
+  </div>
+</section>
+
+<section id="contact" class="contact fade-up">
+  <div class="container">
+    <h3>Contact Us</h3>
+    <p>Phone: <a href="tel:+18482461719">(848) 246-1719</a></p>
+    <p>Email: <a href="mailto:info@Abc-precision.com">info@Abc-precision.com</a></p>
+  </div>
+</section>
+
+<footer class="fade-up">
+  <p>© ABC Precision</p>
+</footer>
+
+<script>
+const faders=document.querySelectorAll('.fade-up');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.2});
+faders.forEach(f=>observer.observe(f));
+</script>
+
+</body>
+</html>
